@@ -170,6 +170,7 @@ function renderQuestion() {
 
     if (q.type === 'map') {
         mapContainer.style.display = 'block';
+        mapContainer.classList.remove('map-answered');
         optionsContainer.style.display = 'none';
         resetMap();
     } else {
@@ -245,9 +246,19 @@ function showFeedback(isCorrect, q) {
         document.getElementById('live-score').style.animation = '';
     }, 300);
 
-    // Hide map/options to make room for feedback
-    document.getElementById('map-container').style.display = 'none';
-    document.getElementById('options-container').style.display = 'none';
+    // For multiple choice: hide options that aren't selected or correct to save space
+    const options = document.querySelectorAll('.option-btn');
+    options.forEach(btn => {
+        if (!btn.classList.contains('correct') && !btn.classList.contains('wrong')) {
+            btn.style.display = 'none';
+        }
+    });
+
+    // For map: shrink it after answer
+    const mapEl = document.getElementById('map-container');
+    if (mapEl.style.display === 'block') {
+        mapEl.classList.add('map-answered');
+    }
 
     const container = document.getElementById('feedback-container');
     document.getElementById('feedback-icon').textContent = isCorrect ? '🎉' : '😅';
