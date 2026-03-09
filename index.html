@@ -53,41 +53,58 @@
             <div class="question-body">
                 <h2 id="question-text" class="question-text"></h2>
                 <div id="map-container" class="map-container" style="display:none;">
-                    <svg id="israel-map" viewBox="0 0 300 720" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Region 1: גליל וגולן -->
+                    <svg id="israel-map" viewBox="-90 -10 490 740" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Region polygons -->
                         <polygon id="region-galilee" class="map-region" data-region="galilee"
                             points="155,55 170,44 185,36 200,30 218,25 232,22 240,18 243,14 248,16 258,18 270,22 280,28 288,40 292,58 288,78 282,95 270,102 258,98 252,103 248,112 244,125 240,140 127,140 132,128 137,115 140,108 143,100 148,92 152,85 155,77 157,68"/>
-                        <!-- Region 2: עמקים -->
                         <polygon id="region-valleys" class="map-region" data-region="valleys"
                             points="127,140 240,140 236,148 234,178 108,178 112,168 120,152"/>
-                        <!-- Region 3: מישור החוף -->
                         <polygon id="region-coast" class="map-region" data-region="coast"
                             points="108,178 148,178 140,340 55,340 62,325 70,310 78,298 85,285 92,268 98,250 102,238 105,225 104,210 102,198 106,182"/>
-                        <!-- Region 4: הרי יהודה ושומרון -->
                         <polygon id="region-hills" class="map-region" data-region="hills"
                             points="148,178 200,178 195,340 140,340"/>
-                        <!-- Region 5: בקעת הירדן וים המלח -->
                         <polygon id="region-deadsea" class="map-region" data-region="deadsea"
                             points="200,178 234,178 236,220 235,250 234,275 232,295 230,310 228,330 222,340 195,340"/>
-                        <!-- Region 6: נגב -->
                         <polygon id="region-negev" class="map-region" data-region="negev"
                             points="55,340 140,340 195,340 222,340 215,375 208,400 198,445 190,475 180,510 168,540 78,540 65,510 52,480 40,458 30,438 22,412 18,395 28,370 38,355 48,345"/>
-                        <!-- Region 7: ערבה ואילת -->
                         <polygon id="region-arava" class="map-region" data-region="arava"
                             points="78,540 168,540 155,590 142,635 136,670 134,700 129,703 126,700 118,665 105,620 90,575"/>
-                        <!-- Region Labels -->
-                        <text x="200" y="80" class="map-label">גליל וגולן</text>
-                        <text x="175" y="163" class="map-label">עמקים</text>
-                        <text x="105" y="262" class="map-label map-label-small">מישור</text>
-                        <text x="105" y="278" class="map-label map-label-small">החוף</text>
-                        <text x="170" y="262" class="map-label map-label-small">הרי יהודה</text>
-                        <text x="170" y="278" class="map-label map-label-small">ושומרון</text>
-                        <text x="222" y="255" class="map-label map-label-tiny">בקעת</text>
-                        <text x="222" y="268" class="map-label map-label-tiny">הירדן</text>
-                        <text x="222" y="281" class="map-label map-label-tiny">וים המלח</text>
-                        <text x="125" y="440" class="map-label">נגב</text>
-                        <text x="128" y="630" class="map-label map-label-small">ערבה</text>
-                        <text x="128" y="646" class="map-label map-label-small">ואילת</text>
+
+                        <!-- Pointer lines -->
+                        <line x1="-8" y1="75" x2="185" y2="75" class="map-pointer"/>
+                        <circle cx="185" cy="75" r="3" class="map-pointer-dot"/>
+
+                        <line x1="-8" y1="160" x2="120" y2="160" class="map-pointer"/>
+                        <circle cx="120" cy="160" r="3" class="map-pointer-dot"/>
+
+                        <line x1="-8" y1="260" x2="80" y2="258" class="map-pointer"/>
+                        <circle cx="80" cy="258" r="3" class="map-pointer-dot"/>
+
+                        <line x1="310" y1="225" x2="170" y2="258" class="map-pointer"/>
+                        <circle cx="170" cy="258" r="3" class="map-pointer-dot"/>
+
+                        <line x1="310" y1="310" x2="218" y2="270" class="map-pointer"/>
+                        <circle cx="218" cy="270" r="3" class="map-pointer-dot"/>
+
+                        <line x1="310" y1="435" x2="125" y2="435" class="map-pointer"/>
+                        <circle cx="125" cy="435" r="3" class="map-pointer-dot"/>
+
+                        <line x1="310" y1="610" x2="130" y2="620" class="map-pointer"/>
+                        <circle cx="130" cy="620" r="3" class="map-pointer-dot"/>
+
+                        <!-- Labels - left side -->
+                        <text x="-15" y="80" class="map-label" text-anchor="end">גליל וגולן</text>
+                        <text x="-15" y="165" class="map-label" text-anchor="end">עמקים</text>
+                        <text x="-15" y="265" class="map-label" text-anchor="end">מישור החוף</text>
+
+                        <!-- Labels - right side -->
+                        <text x="318" y="218" class="map-label" text-anchor="start">הרי יהודה</text>
+                        <text x="318" y="238" class="map-label" text-anchor="start">ושומרון</text>
+                        <text x="318" y="303" class="map-label" text-anchor="start">בקעת הירדן</text>
+                        <text x="318" y="323" class="map-label" text-anchor="start">וים המלח</text>
+                        <text x="318" y="440" class="map-label" text-anchor="start">נגב</text>
+                        <text x="318" y="603" class="map-label" text-anchor="start">ערבה</text>
+                        <text x="318" y="623" class="map-label" text-anchor="start">ואילת</text>
                     </svg>
                 </div>
                 <div id="options-container" class="options-container" style="display:none;"></div>

@@ -243,13 +243,13 @@ body {
 /* ===== Map ===== */
 .map-container {
     width: 100%;
-    max-width: 220px;
+    max-width: 340px;
     margin: 0 auto;
     transition: max-width 0.3s ease;
 }
 
 .map-container.map-answered {
-    max-width: 130px;
+    max-width: 200px;
 }
 
 .map-region {
@@ -281,21 +281,21 @@ body {
 
 .map-label {
     font-family: 'Heebo', sans-serif;
-    font-size: 11px;
+    font-size: 15px;
     font-weight: 700;
     fill: var(--brown-dark);
-    text-anchor: middle;
     pointer-events: none;
 }
 
-.map-label-small {
-    font-size: 9px;
-    font-weight: 500;
+.map-pointer {
+    stroke: var(--brown-light);
+    stroke-width: 1.5;
+    opacity: 0.5;
 }
 
-.map-label-tiny {
-    font-size: 7.5px;
-    font-weight: 500;
+.map-pointer-dot {
+    fill: var(--brown-light);
+    opacity: 0.5;
 }
 
 /* ===== Multiple Choice Options ===== */
@@ -534,7 +534,7 @@ body {
     }
 
     .map-container {
-        max-width: 180px;
+        max-width: 300px;
     }
 
     .score-circle {
