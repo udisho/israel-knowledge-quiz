@@ -28,7 +28,7 @@
             <div class="welcome-content">
                 <div class="logo-icon">🇮🇱</div>
                 <h1>כמה אתה מכיר<br>את <span class="highlight">ישראל</span>?</h1>
-                <p class="subtitle">10 שאלות על גיאוגרפיה, היסטוריה וטבע של ארץ ישראל</p>
+                <p class="subtitle">בוא נבדוק כמה תצטרך להשלים כשנחזור לטייל בארץ</p>
                 <button id="start-btn" class="btn btn-primary" onclick="startQuiz()">יאללה, בוא נתחיל!</button>
                 <div class="welcome-decoration">
                     <span>🏔️</span>
@@ -91,12 +91,16 @@
                     </svg>
                 </div>
                 <div id="options-container" class="options-container" style="display:none;"></div>
-            </div>
-            <div id="feedback-container" class="feedback-container" style="display:none;">
-                <div id="feedback-icon" class="feedback-icon"></div>
-                <p id="feedback-text" class="feedback-text"></p>
-                <a id="feedback-link" class="feedback-link" href="#" target="_blank" rel="noopener">קרא עוד בוויקיפדיה ←</a>
-                <button id="next-btn" class="btn btn-primary" onclick="nextQuestion()">לשאלה הבאה</button>
+                <div id="feedback-container" class="feedback-container" style="display:none;">
+                    <div class="feedback-row">
+                        <span id="feedback-icon" class="feedback-icon"></span>
+                        <p id="feedback-text" class="feedback-text"></p>
+                    </div>
+                    <div class="feedback-actions">
+                        <a id="feedback-link" class="feedback-link" href="#" target="_blank" rel="noopener">ויקיפדיה</a>
+                        <button id="next-btn" class="btn btn-primary btn-next" onclick="nextQuestion()">הבא</button>
+                    </div>
+                </div>
             </div>
         </div>
 

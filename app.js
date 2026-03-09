@@ -245,11 +245,15 @@ function showFeedback(isCorrect, q) {
         document.getElementById('live-score').style.animation = '';
     }, 300);
 
+    // Hide map/options to make room for feedback
+    document.getElementById('map-container').style.display = 'none';
+    document.getElementById('options-container').style.display = 'none';
+
     const container = document.getElementById('feedback-container');
     document.getElementById('feedback-icon').textContent = isCorrect ? '🎉' : '😅';
     document.getElementById('feedback-text').textContent = q.explanation;
     document.getElementById('feedback-link').href = q.link;
-    document.getElementById('next-btn').textContent = currentIndex < 9 ? 'לשאלה הבאה' : 'לתוצאות!';
+    document.getElementById('next-btn').textContent = currentIndex < 9 ? 'הבא' : 'לתוצאות!';
 
     container.style.display = 'block';
 }
@@ -308,31 +312,31 @@ function getResultMessage(score) {
     if (score <= 20) {
         return {
             title: 'אתה רק בתחילת הדרך!',
-            message: 'ארץ ישראל מלאה בהפתעות שמחכות לך. הדרך הכי טובה להכיר אותה - לצאת לטייל בה!',
-            ctaText: 'רוצה לגלות מקומות שלא הכרת?',
+            message: 'יש לך עוד הרבה מה לגלות על הארץ הזו. כשנחזור לשגרה, זה הזמן לצאת ולהכיר אותה מקרוב!',
+            ctaText: 'רוצה לגלות מקומות שלא הכרת כשנחזור לטייל?',
         };
     } else if (score <= 40) {
         return {
             title: 'יש לך ידע בסיסי!',
-            message: 'אתה מכיר קצת את ישראל, אבל יש עוד כל כך הרבה לגלות. בוא תראה את מה שפיספסת!',
+            message: 'אתה מכיר קצת, אבל יש עוד כל כך הרבה לגלות. כשהכל יירגע - יהיה מה להשלים!',
             ctaText: 'רוצה לגלות מקומות נוספים שלא הכרת?',
         };
     } else if (score <= 60) {
         return {
             title: 'לא רע בכלל!',
-            message: 'אתה מכיר חלקים מישראל, אבל עדיין יש עוד מה לחקור.',
+            message: 'אתה מכיר חלקים מישראל, אבל עדיין יש מה לחקור. כשנחזור לטייל בארץ - יש לך מה להשלים!',
             ctaText: 'רוצה לגלות עוד מקומות מיוחדים בארץ?',
         };
     } else if (score <= 80) {
         return {
             title: 'כל הכבוד!',
-            message: 'אתה מכיר את ישראל ממש טוב! אבל תמיד יש עוד פינות נסתרות לגלות.',
+            message: 'אתה מכיר את ישראל ממש טוב! כשנחזור לשגרה, תוכל לגלות את הפינות שעוד לא הגעת אליהן.',
             ctaText: 'רוצה לגלות פינות נסתרות שעוד לא הגעת אליהן?',
         };
     } else {
         return {
             title: 'מדהים! מומחה אמיתי!',
-            message: 'אתה יודע על ישראל יותר מרוב האנשים! בוא לשים את הידע למבחן בשטח.',
+            message: 'אתה יודע על ישראל יותר מרוב האנשים! כשנחזור לשגרה, בוא לשים את הידע למבחן בשטח.',
             ctaText: 'מחפש מסלולים מאתגרים למטיבי לכת?',
         };
     }

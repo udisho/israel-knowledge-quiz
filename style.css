@@ -184,7 +184,10 @@ body {
 /* ===== Question Screen ===== */
 #question-screen {
     padding-top: 15px;
-    gap: 15px;
+    gap: 10px;
+    height: 100dvh;
+    max-height: 100dvh;
+    overflow: hidden;
 }
 
 .question-header {
@@ -340,34 +343,45 @@ body {
 /* ===== Feedback ===== */
 .feedback-container {
     background: white;
-    border-radius: 20px;
-    padding: 20px;
-    text-align: center;
+    border-radius: 16px;
+    padding: 14px 16px;
     box-shadow: 0 4px 20px var(--shadow);
     animation: slideUp 0.3s ease;
-    margin-top: auto;
-    margin-bottom: 20px;
+    width: 100%;
 }
 
-.feedback-icon {
-    font-size: 2.5rem;
-    margin-bottom: 8px;
-}
-
-.feedback-text {
-    font-size: 1rem;
-    color: var(--text-mid);
-    line-height: 1.6;
+.feedback-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
     margin-bottom: 12px;
 }
 
+.feedback-icon {
+    font-size: 1.6rem;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.feedback-text {
+    font-size: 0.88rem;
+    color: var(--text-mid);
+    line-height: 1.5;
+    text-align: right;
+}
+
+.feedback-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
 .feedback-link {
-    display: inline-block;
     color: var(--green-dark);
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.95rem;
-    margin-bottom: 16px;
+    font-size: 0.85rem;
     padding: 6px 12px;
     background: var(--green-pale);
     border-radius: 8px;
@@ -377,6 +391,12 @@ body {
 .feedback-link:hover {
     background: var(--green-light);
     color: white;
+}
+
+.btn-next {
+    padding: 10px 28px;
+    font-size: 0.95rem;
+    margin-right: auto;
 }
 
 /* ===== Results Screen ===== */
