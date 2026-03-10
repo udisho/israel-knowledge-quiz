@@ -388,7 +388,7 @@ function animateScore(from, to, element, duration) {
 // ===== Sharing =====
 function shareWhatsApp() {
     const url = window.location.href;
-    const text = `קיבלתי ${score} מתוך 100 בחידון "כמה אתה מכיר את ישראל?" 🇮🇱\nכמה אתה/את תקבל/י? נסו עכשיו:\n${url}`;
+    const text = `קיבלתי ${score} מתוך 100 בחידון ידיעת הארץ 🇮🇱\nכשנחזור לשגרה - אני הולך להשלים!\nכמה אתה/את תקבל/י?\n${url}`;
     const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(text)}`;
     window.open(whatsappUrl, '_blank');
 }
