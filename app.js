@@ -321,7 +321,7 @@ function showResults() {
     // Dynamic WhatsApp message to Gal based on score
     const galMsg = getGalMessage(score);
     document.getElementById('cta-whatsapp-link').href =
-        'https://wa.me/972508789616?text=' + encodeURIComponent(galMsg);
+        'https://wa.me/972512996082?text=' + encodeURIComponent(galMsg);
 }
 
 function getResultMessage(score) {
