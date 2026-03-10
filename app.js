@@ -340,6 +340,15 @@ function showResults() {
     document.getElementById('result-message').textContent = result.message;
     document.getElementById('cta-text').textContent = result.ctaText;
 
+    // Dynamic challenge text
+    if (score <= 40) {
+        document.getElementById('challenge-text').textContent = 'אין מצב שגם החברים שלכם ככה... או שכן? 🤔';
+    } else if (score <= 70) {
+        document.getElementById('challenge-text').textContent = 'בואו נראה אם החברים שלכם יודעים יותר טוב! 😏';
+    } else {
+        document.getElementById('challenge-text').textContent = 'תאתגרו את החברים ותראו מי באמת מכיר את הארץ! 💪';
+    }
+
     track('quiz_complete', { score: score });
 
     // Dynamic WhatsApp message to Gal based on score

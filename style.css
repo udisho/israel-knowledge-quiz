@@ -485,6 +485,12 @@ body {
     max-width: 320px;
 }
 
+.challenge-text {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--green-dark);
+}
+
 .result-actions {
     display: flex;
     flex-direction: row;
