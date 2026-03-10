@@ -317,6 +317,11 @@ function showResults() {
     document.getElementById('result-title').textContent = result.title;
     document.getElementById('result-message').textContent = result.message;
     document.getElementById('cta-text').textContent = result.ctaText;
+
+    // Dynamic WhatsApp message to Gal based on score
+    const galMsg = getGalMessage(score);
+    document.getElementById('cta-whatsapp-link').href =
+        'https://wa.me/972508789616?text=' + encodeURIComponent(galMsg);
 }
 
 function getResultMessage(score) {
@@ -350,6 +355,20 @@ function getResultMessage(score) {
             message: 'אתה יודע על ישראל יותר מרוב האנשים! כשנחזור לשגרה, בוא לשים את הידע למבחן בשטח.',
             ctaText: 'מחפש מסלולים מאתגרים למטיבי לכת?',
         };
+    }
+}
+
+function getGalMessage(score) {
+    if (score <= 20) {
+        return `היי גל, קיבלתי ${score} בחידון על ישראל 🤦 ברור שאני צריך עזרה... אשמח להצטרף לטיולים שלך ולהתחיל להכיר את הארץ!`;
+    } else if (score <= 40) {
+        return `היי גל, קיבלתי רק ${score} בחידון על ישראל 😅 יש לי מה לשפר! אשמח להצטרף לטיולים שלך`;
+    } else if (score <= 60) {
+        return `היי גל, קיבלתי ${score} בחידון על ישראל - לא רע אבל גם לא מספיק 😄 אשמח לטייל ולהשלים את מה שחסר!`;
+    } else if (score <= 80) {
+        return `היי גל, קיבלתי ${score} בחידון על ישראל! 💪 אבל יש עוד מקומות שלא הגעתי אליהם... אשמח לשמוע על הטיולים שלך`;
+    } else {
+        return `היי גל, אני תותח בידיעת הארץ - קיבלתי ${score} בחידון! 🏆 אבל איך אומרים, תמיד אפשר להכיר עוד! ספר לי על הטיולים שלך`;
     }
 }
 
