@@ -259,10 +259,13 @@ body {
     stroke-width: 2;
     cursor: pointer;
     transition: fill 0.2s ease, opacity 0.2s ease;
+    touch-action: manipulation;
 }
 
-.map-region:hover {
-    fill: var(--green-light);
+@media (hover: hover) {
+    .map-region:hover {
+        fill: var(--green-light);
+    }
 }
 
 .map-region.correct {
@@ -327,11 +330,14 @@ body {
     cursor: pointer;
     transition: all 0.2s ease;
     text-align: right;
+    touch-action: manipulation;
 }
 
-.option-btn:hover {
-    border-color: var(--green-mid);
-    background: var(--green-pale);
+@media (hover: hover) {
+    .option-btn:hover {
+        border-color: var(--green-mid);
+        background: var(--green-pale);
+    }
 }
 
 .option-btn.correct {

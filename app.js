@@ -313,11 +313,6 @@ document.addEventListener('DOMContentLoaded', () => {
         region.addEventListener('click', () => {
             handleMapAnswer(region.dataset.region);
         });
-        // Touch support for Android
-        region.addEventListener('touchend', (e) => {
-            e.preventDefault();
-            handleMapAnswer(region.dataset.region);
-        });
     });
 });
 
