@@ -505,6 +505,13 @@ body {
     font-weight: 500;
 }
 
+.cta-hint {
+    font-size: 0.9rem;
+    color: var(--brown-light);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
 .cta-icons {
     display: flex;
     gap: 20px;
