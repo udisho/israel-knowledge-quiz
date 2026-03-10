@@ -123,6 +123,13 @@ const ALL_QUESTIONS = [
     },
 ];
 
+// ===== Analytics =====
+function track(eventName, params) {
+    if (typeof gtag === 'function') {
+        gtag('event', eventName, params);
+    }
+}
+
 // ===== Quiz State =====
 let currentQuestions = [];
 let currentIndex = 0;
@@ -147,6 +154,7 @@ function startQuiz() {
     answered = false;
     showScreen('question-screen');
     renderQuestion();
+    track('quiz_start');
 }
 
 function renderQuestion() {
@@ -214,6 +222,13 @@ function handleChoiceAnswer(selectedIndex, correctIndex, q) {
     const isCorrect = selectedIndex === correctIndex;
     if (isCorrect) score += 10;
 
+    track('question_answer', {
+        question_id: q.id,
+        question_type: 'choice',
+        correct: isCorrect,
+        question_number: currentIndex + 1
+    });
+
     showFeedback(isCorrect, q);
 }
 
@@ -236,6 +251,14 @@ function handleMapAnswer(regionId) {
     }
 
     if (isCorrect) score += 10;
+
+    track('question_answer', {
+        question_id: q.id,
+        question_type: 'map',
+        correct: isCorrect,
+        question_number: currentIndex + 1
+    });
+
     showFeedback(isCorrect, q);
 }
 
@@ -318,6 +341,8 @@ function showResults() {
     document.getElementById('result-message').textContent = result.message;
     document.getElementById('cta-text').textContent = result.ctaText;
 
+    track('quiz_complete', { score: score });
+
     // Dynamic WhatsApp message to Gal based on score
     const galMsg = getGalMessage(score);
     document.getElementById('cta-whatsapp-link').href =
@@ -397,6 +422,7 @@ function shareWhatsApp() {
         shareMsg = `קיבלתי ${score} מתוך 100 בחידון ידיעת הארץ 🇮🇱\nמי מעז להתמודד איתי?\n${url}`;
     }
     const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(shareMsg)}`;
+    track('share_whatsapp', { score: score });
     window.open(whatsappUrl, '_blank');
 }
 
