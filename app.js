@@ -388,8 +388,15 @@ function animateScore(from, to, element, duration) {
 // ===== Sharing =====
 function shareWhatsApp() {
     const url = window.location.href;
-    const text = `קיבלתי ${score} מתוך 100 בחידון ידיעת הארץ 🇮🇱\nכשנחזור לשגרה - אני הולך להשלים!\nכמה אתה/את תקבל/י?\n${url}`;
-    const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(text)}`;
+    let shareMsg;
+    if (score <= 40) {
+        shareMsg = `קיבלתי ${score} מתוך 100 בחידון ידיעת הארץ 🇮🇱\nכשנחזור לשגרה - יש לי מה להשלים!\nכמה אתה/את תקבל/י?\n${url}`;
+    } else if (score <= 70) {
+        shareMsg = `קיבלתי ${score} מתוך 100 בחידון ידיעת הארץ 🇮🇱\nלא רע, אבל כשנחזור לשגרה מחכה לי עוד עבודה!\nכמה אתה/את תקבל/י?\n${url}`;
+    } else {
+        shareMsg = `קיבלתי ${score} מתוך 100 בחידון ידיעת הארץ 🇮🇱\nמי מעז להתמודד איתי?\n${url}`;
+    }
+    const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(shareMsg)}`;
     window.open(whatsappUrl, '_blank');
 }
 
