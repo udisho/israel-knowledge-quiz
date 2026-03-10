@@ -62,11 +62,15 @@
                         <polygon id="region-coast" class="map-region" data-region="coast"
                             points="108,178 148,178 140,340 55,340 62,325 70,310 78,298 85,285 92,268 98,250 102,238 105,225 104,210 102,198 106,182"/>
                         <polygon id="region-hills" class="map-region" data-region="hills"
-                            points="148,178 200,178 195,340 140,340"/>
+                            points="148,178 200,178 193,378 138,378"/>
                         <polygon id="region-deadsea" class="map-region" data-region="deadsea"
-                            points="200,178 234,178 236,220 235,250 234,275 232,295 230,310 228,330 222,340 195,340"/>
+                            points="200,178 234,178 236,220 235,250 234,275 232,295 230,310 228,330 222,350 216,378 193,378"/>
                         <polygon id="region-negev" class="map-region" data-region="negev"
-                            points="55,340 140,340 195,340 222,340 215,375 208,400 198,445 190,475 180,510 168,540 78,540 65,510 52,480 40,458 30,438 22,412 18,395 28,370 38,355 48,345"/>
+                            points="55,340 140,340 138,378 193,378 216,378 208,400 198,445 190,475 180,510 168,540 78,540 65,510 52,480 40,458 30,438 22,412 18,395 28,370 38,355 48,345"/>
+
+                        <!-- Water bodies (decorative, clicks pass through) -->
+                        <ellipse cx="254" cy="108" rx="10" ry="16" class="map-water"/>
+                        <ellipse cx="228" cy="305" rx="7" ry="40" class="map-water"/>
                         <polygon id="region-arava" class="map-region" data-region="arava"
                             points="78,540 168,540 155,590 142,635 136,670 134,700 129,703 126,700 118,665 105,620 90,575"/>
 
@@ -82,11 +86,11 @@
                         <circle cx="80" cy="258" r="4" class="map-pointer-dot"/>
 
                         <!-- Right labels: lines start just left of text (text-anchor=end, text extends right) -->
-                        <line x1="305" y1="228" x2="195" y2="258" class="map-pointer"/>
-                        <circle cx="195" cy="258" r="4" class="map-pointer-dot"/>
+                        <line x1="305" y1="228" x2="172" y2="275" class="map-pointer"/>
+                        <circle cx="172" cy="275" r="4" class="map-pointer-dot"/>
 
-                        <line x1="305" y1="310" x2="220" y2="270" class="map-pointer"/>
-                        <circle cx="220" cy="270" r="4" class="map-pointer-dot"/>
+                        <line x1="305" y1="310" x2="222" y2="285" class="map-pointer"/>
+                        <circle cx="222" cy="285" r="4" class="map-pointer-dot"/>
 
                         <line x1="305" y1="440" x2="130" y2="435" class="map-pointer"/>
                         <circle cx="130" cy="435" r="4" class="map-pointer-dot"/>
