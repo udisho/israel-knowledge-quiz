@@ -313,6 +313,11 @@ document.addEventListener('DOMContentLoaded', () => {
         region.addEventListener('click', () => {
             handleMapAnswer(region.dataset.region);
         });
+        // Touch support for Android
+        region.addEventListener('touchend', (e) => {
+            e.preventDefault();
+            handleMapAnswer(region.dataset.region);
+        });
     });
 });
 
@@ -346,7 +351,7 @@ function showResults() {
     // Dynamic WhatsApp message to Gal based on score
     const galMsg = getGalMessage(score);
     document.getElementById('cta-whatsapp-link').href =
-        'https://wa.me/972512996082?text=' + encodeURIComponent(galMsg);
+        'https://api.whatsapp.com/send?phone=972512996082&text=' + encodeURIComponent(galMsg);
 }
 
 function getResultMessage(score) {
@@ -421,7 +426,7 @@ function shareWhatsApp() {
     } else {
         shareMsg = `קיבלתי ${score} מתוך 100 בחידון ידיעת הארץ 🇮🇱\nמי מעז להתמודד איתי?\n${url}`;
     }
-    const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(shareMsg)}`;
+    const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareMsg)}`;
     track('share_whatsapp', { score: score });
     window.open(whatsappUrl, '_blank');
 }
