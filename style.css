@@ -431,13 +431,13 @@ body {
     justify-content: center;
     text-align: center;
     flex: 1;
-    gap: 12px;
+    gap: 6px;
 }
 
 .score-circle {
     position: relative;
-    width: 120px;
-    height: 120px;
+    width: 90px;
+    height: 90px;
 }
 
 .score-circle svg {
@@ -467,26 +467,26 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     font-weight: 900;
     color: var(--green-dark);
 }
 
 .result-title {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     font-weight: 900;
     color: var(--brown-dark);
 }
 
 .result-message {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     color: var(--text-mid);
-    line-height: 1.5;
+    line-height: 1.3;
     max-width: 320px;
 }
 
 .challenge-text {
-    font-size: 1.05rem;
+    font-size: 0.9rem;
     font-weight: 700;
     color: var(--green-dark);
 }
@@ -501,8 +501,8 @@ body {
 }
 
 .tour-cta {
-    margin-top: 6px;
-    padding: 14px;
+    margin-top: 2px;
+    padding: 10px;
     background: white;
     border-radius: 16px;
     box-shadow: 0 4px 20px var(--shadow);
@@ -512,16 +512,16 @@ body {
 }
 
 .tour-cta p {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--text-mid);
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     font-weight: 500;
 }
 
 .cta-hint {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: var(--brown-light);
-    margin-bottom: 6px;
+    margin-bottom: 4px;
     font-weight: 600;
 }
 
@@ -552,15 +552,17 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 56px;
-    height: 56px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     transition: all 0.2s ease;
     text-decoration: none;
 }
 
-.cta-icon-btn:hover {
-    transform: translateY(-2px) scale(1.08);
+@media (hover: hover) {
+    .cta-icon-btn:hover {
+        transform: translateY(-2px) scale(1.08);
+    }
 }
 
 .cta-whatsapp {
@@ -571,6 +573,20 @@ body {
 .cta-instagram {
     background: linear-gradient(135deg, #833AB4, #E1306C, #F77737);
     box-shadow: 0 4px 12px rgba(225, 48, 108, 0.35);
+}
+
+.btn-quiz-link {
+    background: linear-gradient(135deg, #5D4037, #795548);
+    color: white;
+    box-shadow: 0 4px 15px rgba(93, 64, 55, 0.3);
+    text-decoration: none;
+    font-size: 0.95rem;
+    padding: 10px 24px;
+}
+
+.other-quiz {
+    margin-top: 6px;
+    text-align: center;
 }
 
 /* ===== Responsive ===== */
@@ -588,12 +604,12 @@ body {
     }
 
     .score-circle {
-        width: 100px;
-        height: 100px;
+        width: 90px;
+        height: 90px;
     }
 
     .score-number {
-        font-size: 2.5rem;
+        font-size: 1.8rem;
     }
 }
 
